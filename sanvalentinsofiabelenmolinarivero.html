@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            background-image: url('1.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        h1 {
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        #si {
+            background-color: green;
+            color: white;
+        }
+        #no {
+            background-color: red;
+            color: white;
+            position: relative;
+        }
+        #mensaje {
+            margin-top: 20px;
+            font-size: 2em;
+            color: white;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ser mi San Valentín, Sofia Belén Molina Rivero?</h1>
+    <div class="buttons">
+        <button id="si">Sí</button>
+        <button id="no">No</button>
+    </div>
+    <div id="mensaje">¡Sabía que dirias q si, te amo mi amor! 💖</div>
+
+    <script>
+        const botonSi = document.getElementById('si');
+        const botonNo = document.getElementById('no');
+        const mensaje = document.getElementById('mensaje');
+
+        botonSi.addEventListener('click', () => {
+            mensaje.style.display = 'block';
+            botonSi.style.display = 'none';
+            botonNo.style.display = 'none';
+        });
+
+        botonNo.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - botonNo.offsetWidth);
+            const y = Math.random() * (window.innerHeight - botonNo.offsetHeight);
+            botonNo.style.position = 'absolute';
+            botonNo.style.left = `${x}px`;
+            botonNo.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
